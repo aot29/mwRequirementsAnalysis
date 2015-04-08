@@ -1,0 +1,62 @@
+<includeonly>
+{{DISPLAYTITLE: Use case - {{PAGENAME}}}}
+__NOEDITSECTION__
+
+==Name and identifier==
+{{{id|required}}}, [[Systems_Analysis/Name::{{{name|required}}}]]
+
+==Description==
+[[Systems_Analysis/Description::{{{description|none}}}]]
+
+==Actors==
+===Primary actors===
+{{{actors_primary|required}}}
+
+===Secundary actors===
+{{{actors_secondary|none}}}
+
+==Scenario==
+
+===Trigger===
+{{{trigger|required}}}
+
+===Preconditions===
+{{{preconditions|none}}}
+
+===Main scenario===
+{{{main_scenario|required}}}
+
+===Outcomes===
+{{{outcomes|required}}}
+
+==Alternate scenarios==
+
+===Acceptable Scenarios===
+{{{acceptable_scenarios|none}}}
+
+===Exceptions===
+{{{exceptions|none}}}
+
+===Misuse===
+{{{misuse|none}}}
+
+==Related goal(s)==
+{{{related_goal}}}
+
+==Related use case(s)==
+===Dependencies===
+{{{related_use_case|none}}}
+
+===Threats===
+{{{related_misuse_case|none}}}
+
+==Models==
+{{{models|none}}}
+
+==Notes==
+{{{notes|none}}}
+
+__NOTOC__
+</includeonly>
+[[Category: Use case]]
+<noinclude>{{Systems Analysis/doc/Use_Case}}</noinclude>
