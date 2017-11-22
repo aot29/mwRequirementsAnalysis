@@ -21,59 +21,269 @@
     
 
 
-    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Description -->
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Conflicting_goals -->
 
-    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Description">
-        <rdfs:comment xml:lang="de">Hier erfolgt eine kurze Beschreibung des Ziels. Kurz bedeutet, dass es drei Sätze  sind, selten mehr. Bitte keine Implementierungsdetails (das &quot;Was&quot;, nicht das &quot;Wie&quot;).</rdfs:comment>
-        <rdfs:label xml:lang="de">Beschreibung</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Conflicting_goals">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal"/>
+        <rdfs:range rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal"/>
+        <rdfs:comment xml:lang="de">Andere Ziele, die mit diesem Ziel unvereinbar sind.</rdfs:comment>
+        <rdfs:label xml:lang="de">Zielkonflikte</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Fit_criteria -->
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Has_Goals -->
 
-    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Fit_criteria">
-        <rdfs:comment xml:lang="de">Qualitätskriterien, woran erkannt werden kann, ob das Ziel erreicht wurde. Je nach Ziel-Typ soll anders quantifizier werden:
-• Dienste: Bei Dienste soll quantifiziert werden, was der Mehrwert für den Verbraucher ist.
-• Umsatzziel: Die Einnahmen, die per Zeiteinheit erwirtschaftet werden, bzw. was die konkreten Ersparnisse sind.
-• Norm: Bei technisch-juristische sowie anerkannte Qualitätsnormen reicht es, hier die betreffende Regel zu referenzieren.</rdfs:comment>
-        <rdfs:label xml:lang="de">Kriterien und Indikatoren</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Motivation -->
-
-    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Motivation">
-        <rdfs:comment xml:lang="de">Der erwartete Mehrwert, aus Sicht der relevanten Stakeholder.</rdfs:comment>
-        <rdfs:label xml:lang="de">Motivation</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Name -->
-
-    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Name">
-        <rdfs:label xml:lang="de">Name</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Related_goals -->
-
-    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Related_goals">
-        <rdfs:comment xml:lang="de">Andere Ziele, die diesem Ziel untergeordnet sind, oder mit diesem Ziel unvereinbar sind.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Has_Goals">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Stakeholder"/>
+        <rdfs:range rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal"/>
         <rdfs:label xml:lang="de">Zugehörige Ziele</rdfs:label>
     </owl:ObjectProperty>
     
 
 
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Primary_actors -->
+
+    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Primary_actors">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Stakeholder"/>
+        <rdfs:comment xml:lang="de">Akteure sind am Szenario beteiligte Stakeholder, z.B. Anwender, Kunden, externe Systeme. Die Akteure werden mit Hilfe der Stakeholder-Vorlage in einem eigenen Dokument beschrieben. Es werden zwei Arten von Akteuren unterschieden: Primäre Akteure sind die eigentlichen Benutzer des Systems. WER fragt das System? Auf welchem Weg werden die Informationen abgefragt (jetzt oder später)?</rdfs:comment>
+        <rdfs:label xml:lang="de">Primäre Akteure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Related_use_cases -->
+
+    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Related_use_cases">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:comment xml:lang="de">Wenn das Szenario auf andere Szenarien zurückgreift (einbezieht oder erweitert), werden diese Szenarien hier aufgezählt. Szenarien, die zu diesem Szenario in Widerspruch stehen, werden ebenfalls hier aufgezählt.</rdfs:comment>
+        <rdfs:label xml:lang="de">Zugehörige Use Cases</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Secondary_actors -->
+
+    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Secondary_actors">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Stakeholder"/>
+        <rdfs:comment xml:lang="de">Neben den primären Akteuren gibt es noch sekundäre Akteure, die das System überwachen, warten und den Primären Akteure bei ihren Zielerreichung unterstützen oder dessen Arbeit vom Szenario beeinflusst wird.</rdfs:comment>
+        <rdfs:label xml:lang="de">Sekundäre Akteure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Subordinate_goals -->
+
+    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Subordinate_goals">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal"/>
+        <rdfs:range rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal"/>
+        <rdfs:comment xml:lang="de">Andere Ziele, die diesem Ziel untergeordnet sind.</rdfs:comment>
+        <rdfs:label xml:lang="de">Untergeordnete Ziele</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Alternative_scenarios -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Alternative_scenarios">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Dies sind Szenarien, die sich außerhalb des Standardablaufs auch bei der (versuchten) Zielerreichung des Anwendungsfalls ereignen können. Sie werden meistens als konditionale Verzweigungen der normalen Ablaufschritte dargestellt. An ihrem Ende steht ein Misserfolg, die Zielerreichung des Primärakteurs oder eine Rückkehr zum Standardablauf. Zulässige Szenarien stellen zulässige Variationen des Standardablaufs dar.</rdfs:comment>
+        <rdfs:label xml:lang="de">Zulässige Szenarien</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Competency -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Competency">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Stakeholder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Kompetenzdomäne der Beteiligten in Bezug auf das System: z.B. Qualitätssicherung bzgl. Technik, Inhalte, Usabilty; Überprüfung (Lizenzen etc.); Freigabe.</rdfs:comment>
+        <rdfs:label xml:lang="de">Kompetenzen</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Exceptions -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Exceptions">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Ausnahmeszenarien sind unerwünschte Variationen des Standardablaufs. Ausnahmeszenarien können als Folge von Kommunikationsproblemen entstehen und bedeuten in der Regel, dass das Szenario überarbeitet werden muss.</rdfs:comment>
+        <rdfs:label xml:lang="de">Ausnahmeszenarien</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Fit_criteria -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Fit_criteria">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Qualitätskriterien, woran erkannt werden kann, ob das Ziel erreicht wurde. Je nach Ziel-Typ soll anders quantifiziert werden:
+;Dienste
+:Bei Dienste soll quantifiziert werden, was der Mehrwert für den Verbraucher ist.
+;Umsatzziel
+:Die Einnahmen, die per Zeiteinheit erwirtschaftet werden, bzw. was die konkreten Ersparnisse sind.
+;Norm
+:Bei technisch-juristische sowie anerkannte Qualitätsnormen reicht es, hier die betreffende Regel zu referenzieren.</rdfs:comment>
+        <rdfs:label xml:lang="de">Kriterien und Indikatoren</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal_description -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal_description">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Hier erfolgt eine kurze Beschreibung des Ziels. Kurz bedeutet, dass es drei Sätze  sind, selten mehr. Bitte keine Implementierungsdetails (das &quot;Was&quot;, nicht das &quot;Wie&quot;).</rdfs:comment>
+        <rdfs:label xml:lang="de">Beschreibung</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Main_scenario -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Main_scenario">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Hier wird das typische Szenario dargestellt, das leicht zu verstehen oder der am häufigsten vorkommende Fall ist. An seinem Ende steht die Zielerreichung des Primärakteurs. Die Ablaufschritte werden nummeriert und meist in strukturierter Sprache beschrieben.</rdfs:comment>
+        <rdfs:label xml:lang="de">Standardablauf</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Misuse -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Misuse">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Fehlnutzung stellt absichtliche unzulässige Nutzung des Systems dar. Fehlnutzungsszenarien sind sicherheitsrelevant und sollten besonders gut dokumentiert sein.</rdfs:comment>
+        <rdfs:label xml:lang="de">Fehlnutzung</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Model -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Model">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Motivation -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Motivation">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Der erwartete Mehrwert, aus Sicht der relevanten Stakeholder.</rdfs:comment>
+        <rdfs:label xml:lang="de">Motivation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Name -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Name">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Template"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="de">Bezeichnung</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Post-conditions -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Post-conditions">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Der Zustand, der nach einem erfolgreichen Durchlauf des Standardablaufs erwartet wird.</rdfs:comment>
+        <rdfs:label xml:lang="de">Ergebnisse</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Pre-conditions -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Pre-conditions">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Alle Bedingungen, die erfüllt sein müssen, damit dieser Anwendungsfall ausgeführt werden kann. Gibt es keine Vorbedingungen, so steht hier „keine“.</rdfs:comment>
+        <rdfs:label xml:lang="de">Vorbedingungen</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Role -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Role">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Stakeholder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="de">Was ist diese Person für das System? Kernteam, Anwender, Anwendersupport, Wartung, Schnittstelle, Informant, Entscheider, Berater, Lieferant usw.</rdfs:comment>
+        <rdfs:label xml:lang="de">Rolle im Projekt</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Sources -->
 
-    <owl:ObjectProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Sources">
-        <rdfs:comment xml:lang="de">Notizen, andere Dokumente usw.</rdfs:comment>
-        <rdfs:label xml:lang="de">Quellen</rdfs:label>
-    </owl:ObjectProperty>
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Sources">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Template"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Verlinkungen zu unterstützenden Dokumenten, Spezifikationen oder Webseiten.</rdfs:comment>
+        <rdfs:label xml:lang="de">Begleitmaterial</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Stakeholder_description -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Stakeholder_description">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Stakeholder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Berufsbezeichnung oder Systemname. Rolleninhaber muss auffindbar sein.</rdfs:comment>
+        <rdfs:label xml:lang="de">Beschreibung</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Trigger -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Trigger">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">Der fachliche Grund bzw. die Gründe dafür, dass dieser Anwendungsfall ausgeführt wird. Von WEM kommen die Anfragen? Warum sollte das System sie beantworten können?</rdfs:comment>
+        <rdfs:label xml:lang="de">Auslöser</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case_description -->
+
+    <owl:DatatypeProperty rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case_description">
+        <rdfs:domain rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="de">WAS wird benötigt? Was ist das ZIEL. Hier erfolgt eine kurze Beschreibung, was im Szenario passiert. Kurz bedeutet, dass es zwei oder drei Zeilen sind, selten mehr. Eine detaillierte Beschreibung erfolgt hier Unten im Standardablauf.</rdfs:comment>
+        <rdfs:label xml:lang="de">Beschreibung</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -91,8 +301,35 @@
     <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal -->
 
     <owl:Class rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Goal">
+        <rdfs:subClassOf rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Template"/>
         <rdfs:comment xml:lang="de">Ziele sind die übergeordneten Anforderungen am Projekt. Ziele beschreiben, was das Projekt erreichen soll, das heißt ein Problem zu lösen und/oder ein Vorteil zu erlangen. Es ist zielführend, die Zieldefinition von dem Lösungsansatz zu trennen, denn eine Festlegung der Lösung in der Zieldefinition verringert den Lösungsspielraum.</rdfs:comment>
         <rdfs:label xml:lang="de">Ziel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Stakeholder -->
+
+    <owl:Class rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Stakeholder">
+        <rdfs:subClassOf rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Template"/>
+        <rdfs:comment xml:lang="de">Als Stakeholder wird eine Person oder Gruppe bezeichnet, die ein berechtigtes Interesse am Verlauf oder Ergebnis eines Prozesses oder Projektes hat. Der Ausdruck Stakeholder stammt aus dem Englischen. „Stake“ kann mit Einsatz, Anteil oder Anspruch übersetzt werden, „holder“ mit Eigentümer oder Besitzer. Der Stakeholder ist daher jemand, dessen Einsatz auf dem Spiel steht und der daher ein Interesse an Wohl und Wehe dieses Einsatzes hat. Im übertragenen Sinne wird „Stakeholder“ heutzutage nicht nur für Personen verwendet, die tatsächlich einen Einsatz geleistet haben, sondern für alle, die ein Interesse am Verlauf oder Ergebnis eines Prozesses oder Projektes haben; beispielsweise auch Kunden oder Mitarbeiter (Text aus Wikipedia, sieh: Freeman and McVea, 2001).</rdfs:comment>
+        <rdfs:label xml:lang="de">Stakeholder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Template -->
+
+    <owl:Class rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Template"/>
+    
+
+
+    <!-- http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case -->
+
+    <owl:Class rdf:about="http://naturkundemuseum.berlin/ikon/requirements_analysis#Use_case">
+        <rdfs:subClassOf rdf:resource="http://naturkundemuseum.berlin/ikon/requirements_analysis#Template"/>
+        <rdfs:comment xml:lang="de">Use Cases sind eine sehr häufig angewandte und bewehrte Technik der Bedarfsanalyse (Jacobson, 2004). Die Beschreibung der Use Cases basiert auf die Liste der Stakeholder und die Definition des Systemumfangs: ein Use Case wird ausgelöst, wenn ein Stakeholder mit dem System interagiert. Neben dem erwünschten Standardablauf werden auch alternative Abläufe beschrieben. Da Use Cases in der Modellierungssprache UML integriert sind, trägt eine präzise Beschreibung wesentlich zur Kommunikation mit den Informatikern.</rdfs:comment>
+        <rdfs:label xml:lang="de">Use Case</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
