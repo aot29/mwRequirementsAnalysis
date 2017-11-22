@@ -1,1 +1,0 @@
-Tests depend on Selenium IDE: http://docs.seleniumhq.org/download/
